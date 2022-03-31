@@ -43,7 +43,7 @@ df['ORDER'] = orders
 #df.to_csv('curry_ordered.csv', index=False)
 
 ''''
-#ORDINAL
+#NOMINAL
 new_df = pd.get_dummies(df)
 new_df.to_csv('curry_onehot.csv', index=False)
 '''
