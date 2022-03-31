@@ -34,25 +34,3 @@ y_pred_val = hub.predict(X_val)
 print(mae(y_pred_val, y_val.reshape(-1,)))
 y_pred_test = hub.predict(X_test)
 print(mae(y_pred_test, y_test))
-
-'''
-kfold = RepeatedKFold(n_splits=5, n_repeats=10, random_state=None) 
-for train_index, val_index in kfold.split(X_train_val):
-    #print("Train:", train_index, "Validation:",val_index)
-    X_train, X_val = X_train_val[train_index], X_train_val[val_index]
-    y_train, y_val = y_train_val[train_index], y_train_val[val_index]
-    
-    lin = LinearRegression()
-    lin.fit(X_train, y_train)
-    y_pred_train = lin.predict(X_train)
-    y_pred_val = lin.predict(X_val)
-    tr_error = mean_squared_error(y_train, y_pred_train)
-    val_error = mean_squared_error(y_val, y_pred_val)
-    
-    if tr_error < 76 and val_error < 76: break
-
-print(tr_error, val_error)
-'''
-
-
-
