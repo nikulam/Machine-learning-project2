@@ -26,11 +26,11 @@ X_train, X_val, y_train, y_val = train_test_split(X_train_val, y_train_val, test
 lin = LinearRegression()
 hub = HuberRegressor(epsilon=1, alpha=0.01)
 
-hub.fit(X_train, y_train.reshape(-1,))
+lin.fit(X_train, y_train.reshape(-1,))
 
-y_pred_train = hub.predict(X_train)
+y_pred_train = lin.predict(X_train)
 print(mae(y_pred_train, y_train.reshape(-1,)))
-y_pred_val = hub.predict(X_val)
+y_pred_val = lin.predict(X_val)
 print(mae(y_pred_val, y_val.reshape(-1,)))
-y_pred_test = hub.predict(X_test)
+y_pred_test = lin.predict(X_test)
 print(mae(y_pred_test, y_test))
